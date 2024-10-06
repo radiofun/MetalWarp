@@ -50,11 +50,11 @@ using namespace metal;
     //farther from the center of the image, it gets larger, amplified by normalized angle
     float displacefactor = 1.0 - (distance * distance) * normalizedAngle * 2;
     //make new position more non-linear, and then add displace factor, make them smaller (larger the number, smaller it gets)
-//    float2 newposition = position + position * displacefactor * 2;
+    float2 newposition = position + position * displacefactor * 2;
     //sin makes repated pattern
 //    float2 newposition = position * sin(displacefactor * 3.14);
     //multiply creates different effects
-    float2 newposition = position * pow(displacefactor,2);
+//    float2 newposition = position * pow(displacefactor,2);
     
     //reset the colors
     half3 c = half3(l.sample(newposition+offsetfactor).r,l.sample(newposition+offsetfactor*0.2).g,l.sample(newposition-offsetfactor).b);
