@@ -11,7 +11,7 @@ import SwiftUI
 struct MetalWarpViewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImageWarpView()
         }
     }
 }
